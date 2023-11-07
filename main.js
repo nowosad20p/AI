@@ -8,7 +8,7 @@ const networkCtx = networkCanvas.getContext("2d");
 
 const road=new Road(carCanvas.width/2,carCanvas.width*0.9);
 
-const N=10;
+const N=50;
 const cars=generateCars(N);
 let bestCar=cars[0];
 if(localStorage.getItem("bestBrain")){
@@ -61,7 +61,9 @@ function animate(time){
         c=>c.y==Math.min(
             ...cars.map(c=>c.y)
         ));
-
+    if(!cars.find(x=>x.damaged==false)){
+        location = location
+    }
     carCanvas.height=window.innerHeight;
     networkCanvas.height=window.innerHeight;
 
