@@ -54,6 +54,8 @@ function save(){
 function discard(){
     console.log("usuwam")
     window.sessionStorage.clear()
+            location = location
+
 }
 document.querySelector("#save").onclick=()=>{save()};
 document.querySelector("#discard").onclick=()=>{discard()};
